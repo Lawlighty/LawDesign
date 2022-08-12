@@ -1,0 +1,26 @@
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+  .dialog {
+    position: relative;
+    top: 100px;
+    box-sizing: border-box;
+    width: auto;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+    padding: 0 0 24px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    pointer-events: none;
+    font-feature-settings: 'tnum', 'tnum';
+  }
+}
