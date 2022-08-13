@@ -1,7 +1,7 @@
 ---
 hero:
   title: lawDesgin
-  desc: lawDesgin site example
+  desc: 基于 NES.css 的 React 组件库
   actions:
     - text: Getting Started
       link: /components

@@ -5,6 +5,10 @@
  * @FilePath: \lawDesgin\src\index.ts
  * @Description:
  */
-export { default as Foo } from './Foo';
-export { default as Dialog } from './Dialog';
-export { default as Modal } from './Modal';
+import 'nes.css/css/nes.min.css'
+import './index.css'
+export { default as Button } from './Button'
+export { default as Icon } from './Icon'
+export { default as Foo } from './Foo'
+export { default as Dialog } from './Dialog'
+export { default as Modal } from './Modal'

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'pix font';
+  src: url('/font/DottedSongtiSquareRegular.otf')
+}
+
+
+* {
+  font-family: 'pix font';
+  font-weight: bold;
+  /* text-shadow: 2px 2px 1px gray; */
+  text-shadow: 1px 1px 0px gray;
+}
+
+/* .btn-wrapper .nes-btn {
+  margin-right: 16px;
+} */
