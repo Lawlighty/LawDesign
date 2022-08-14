@@ -14,3 +14,13 @@
 /* .btn-wrapper .nes-btn {
   margin-right: 16px;
 } */
+
+.flex-r-a-c{
+  display: flex;
+  align-items: center;
+}
+
+.flex-r-j-c{
+  display: flex;
+  justify-content: center;
+}

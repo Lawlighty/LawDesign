@@ -51,6 +51,7 @@ const LNButtonComp = () => {
       <Button type="warning">warning</Button>
       <Button type="error">error</Button>
       <Button type="disabled">disabled</Button>
+      <Button type="disabled">disabled</Button>
     </div>
   )
 }

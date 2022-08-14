@@ -5,7 +5,7 @@ export default (props: ButtonProps) => {
   const { type = 'default', children = null, onClick = () => {} } = props
   return (
     <button type="button" className={`nes-btn is-${type}`} onClick={onClick}>
-      {children}
+      <div className="flex-r-a-c">{children}</div>
     </button>
   )
 }
