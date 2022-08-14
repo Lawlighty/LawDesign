@@ -9,11 +9,11 @@ group:
   order: 1
 ---
 
-## Button
+# Button
 
 按钮用于开始一个即时操作。
 
-### 种类
+## 种类
 
 我们提供了六种样式按钮。
 
@@ -51,14 +51,13 @@ const LNButtonComp = () => {
       <Button type="warning">warning</Button>
       <Button type="error">error</Button>
       <Button type="disabled">disabled</Button>
-      <Button type="disabled">disabled</Button>
     </div>
   )
 }
 export default LNButtonComp
 ```
 
-### API
+## API
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |

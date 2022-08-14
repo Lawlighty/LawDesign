@@ -9,7 +9,7 @@ group:
   order: 2
 ---
 
-## Text
+# Text
 
 文本样式
 
@@ -33,7 +33,7 @@ const LNTextComp = () => {
 export default LNTextComp
 ```
 
-### API
+## API
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |

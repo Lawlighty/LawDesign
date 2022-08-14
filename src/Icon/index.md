@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-## Icon
+# Icon
 
 ```tsx
 import React from 'react'
@@ -127,7 +127,34 @@ const LNICONComp = () => {
 export default LNICONComp
 ```
 
-### API
+```tsx
+/**
+ * title: 任天堂图标
+ * desc: 任天堂拥有这些角色的版权。请遵守任天堂的指导方针和适用司法管辖区的法律
+ */
+import React from 'react'
+import { Icon } from 'lawDesgin'
+import './index.less'
+
+const LNICONComp = () => {
+  const ICON_LIST = ['mario', 'ash', 'pokeball', 'bulbasaur', 'charmander', 'squirtle', 'kirby']
+  return (
+    <div className="icon-wrapper">
+      {ICON_LIST.map((item) => (
+        <div className="icon-item-wrapper" key={item}>
+          <div className="icon-item">
+            <Icon icon={item}></Icon>
+            <div>{item}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+export default LNICONComp
+```
+
+## API
 
 | 属性        | 说明      | 类型 | 默认值  | 版本 |
 | ----------- | --------- | ---- | ------- | ---- |

@@ -9,30 +9,78 @@ group:
   order: 2
 ---
 
-## Radio
+# Radio
 
 单选按钮
 
+## 何时使用
+
+- 用于在多个备选项中选中单个状态。
+- 和 Select 的区别是，Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
+
 ```tsx
+/**
+ * title: 按钮组 基本使用
+ *
+ */
+
 import React from 'react'
-import { Radio } from 'lawDesgin'
+import { Radio, RadioGroup } from 'lawDesgin'
 import './index.less'
 
 const LNRadioComp = () => {
+  const onChange = (a: string, b: number) => {
+    console.log(a, b)
+  }
+
   return (
     <div className="radio-wrapper">
-      <Radio checked={false}>Radio</Radio>
+      <RadioGroup value={1} onChange={onChange}>
+        <Radio disabled>Apple</Radio>
+        <Radio>Orange</Radio>
+        <Radio>Watch</Radio>
+      </RadioGroup>
     </div>
   )
 }
 export default LNRadioComp
 ```
 
-### API
+```tsx
+/**
+ * title: 垂直排列
+ * desc: 可以通过设置 `vertical` 开启垂直
+ */
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| type | 文本颜色 | `primary` \| `success` \| `warning` \| `error` \| `disabled` |  |  |
-| children | 文本内容 | `string` |  |  |
+import React from 'react'
+import { Radio, RadioGroup } from 'lawDesgin'
+import './index.less'
+
+const LNRadioComp = () => {
+  const onChange = (a: string, b: number) => {
+    console.log(a, b)
+  }
+
+  return (
+    <div className="radio-wrapper">
+      <RadioGroup value={1} onChange={onChange} vertical>
+        <Radio disabled>Apple</Radio>
+        <Radio>Orange</Radio>
+        <Radio>Watch</Radio>
+      </RadioGroup>
+    </div>
+  )
+}
+export default LNRadioComp
+```
+
+## API
+
+| 属性     | 说明             | 类型       | 默认值  | 版本 |
+| -------- | ---------------- | ---------- | ------- | ---- |
+| value    | 默认选中索引     | `number`   | `1`     |      |
+| disabled | 禁用             | `boolean`  |         |      |
+| vertical | 垂直样式         | `boolean`  | `false` |      |
+| onChange | 选项改变回调函数 | `function` |         |      |
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
