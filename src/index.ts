@@ -14,6 +14,7 @@ export { default as Radio } from './Radio/Radio';
 export { default as RadioGroup } from './Radio/RadioGroup/RadioGroup';
 export { default as Checkbox } from './Checkbox';
 export { default as CheckboxGroup } from './Checkbox/CheckboxGroup/CheckboxGroup';
+export { default as Input } from './Input';
 export { default as Foo } from './Foo';
 export { default as Dialog } from './Dialog';
 export { default as Modal } from './Modal';
