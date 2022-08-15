@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
-    "lint": "eslint --fix --ext .ts --ext .js --ext .tsx  --ext .jsx src",
+    "lint": "eslint --fix --ext .ts,.js,.tsx,.jsx src",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father build",
