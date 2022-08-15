@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-08-15 08:44:40
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-15 15:40:18
+ * @LastEditTime: 2022-08-15 15:57:03
  * @FilePath: \lawDesgin\src\Radio\Radio.tsx
  * @Description:
  */
@@ -21,6 +21,13 @@ interface RadioProps {
    */
   // eslint-disable-next-line  react/no-unused-prop-types
   disabled?: boolean;
+  /**
+   * @description 黑暗模式
+   * @default 0
+   */
+  // eslint-disable-next-line  react/no-unused-prop-types
+  dark?: boolean;
+
   /**
    * @description 支持手动扩展
    * @default false

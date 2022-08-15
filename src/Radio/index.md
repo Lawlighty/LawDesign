@@ -24,14 +24,14 @@ group:
  *
  */
 
-import React from 'react'
-import { Radio, RadioGroup } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Radio, RadioGroup } from 'lawDesgin';
+import './index.less';
 
 const LNRadioComp = () => {
   const onChange = (a: string, b: number) => {
-    console.log(a, b)
-  }
+    console.log(a, b);
+  };
 
   return (
     <div className="radio-wrapper">
@@ -41,9 +41,9 @@ const LNRadioComp = () => {
         <Radio>Watch</Radio>
       </RadioGroup>
     </div>
-  )
-}
-export default LNRadioComp
+  );
+};
+export default LNRadioComp;
 ```
 
 ```tsx
@@ -52,14 +52,14 @@ export default LNRadioComp
  * desc: 可以通过设置 `vertical` 开启垂直
  */
 
-import React from 'react'
-import { Radio, RadioGroup } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Radio, RadioGroup } from 'lawDesgin';
+import './index.less';
 
 const LNRadioComp = () => {
   const onChange = (a: string, b: number) => {
-    console.log(a, b)
-  }
+    console.log(a, b);
+  };
 
   return (
     <div className="radio-wrapper">
@@ -69,9 +69,42 @@ const LNRadioComp = () => {
         <Radio>Watch</Radio>
       </RadioGroup>
     </div>
-  )
-}
-export default LNRadioComp
+  );
+};
+export default LNRadioComp;
+```
+
+```tsx
+/**
+ * title: 黑暗模式
+ * desc: 可以通过设置 `dark` 开启
+ */
+
+import React from 'react';
+import { Radio, RadioGroup } from 'lawDesgin';
+import './index.less';
+
+const LNRadioComp = () => {
+  const onChange = (a: string, b: number) => {
+    console.log(a, b);
+  };
+
+  return (
+    <div
+      className="radio-wrapper"
+      style={{ background: '#212529', padding: '1rem 0' }}
+    >
+      <RadioGroup value={1} onChange={onChange}>
+        <Radio disabled dark>
+          Apple
+        </Radio>
+        <Radio dark>Orange</Radio>
+        <Radio dark>Watch</Radio>
+      </RadioGroup>
+    </div>
+  );
+};
+export default LNRadioComp;
 ```
 
 ## API

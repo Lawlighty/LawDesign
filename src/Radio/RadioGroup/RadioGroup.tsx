@@ -1,19 +1,26 @@
+/*
+ * @Date: 2022-08-15 08:44:40
+ * @LastEditors: lyx
+ * @LastEditTime: 2022-08-15 15:56:36
+ * @FilePath: \lawDesgin\src\Radio\RadioGroup\RadioGroup.tsx
+ * @Description:
+ */
 import React, { FC, useState, useEffect, memo, useCallback } from 'react';
 import styles from './index.less';
 
 interface RadioGroupProps {
-  children: Array<Object>
+  children: Array<Object>;
   /**
    * @description 默认值
    * @default 0
    */
-  value?: number
-  vertical?: boolean
-  onChange?: Function
+  value?: number;
+  vertical?: boolean;
+  onChange?: Function;
 }
 interface RadioProps {
-  children: string
-  disabled: boolean
+  children: string;
+  disabled: boolean;
 }
 
 const RadioGroup: FC<RadioGroupProps> = (props) => {
@@ -34,11 +41,15 @@ const RadioGroup: FC<RadioGroupProps> = (props) => {
   };
 
   return (
-    <div className={`${styles['raido-group-wrapper']} ${vertical && styles['vertical-wrapper']}`}>
+    <div
+      className={`${styles['raido-group-wrapper']} ${
+        vertical && styles['vertical-wrapper']
+      }`}
+    >
       {renderOptions.map((item: any, index: number) => {
         return (
           <label
-            className={styles['raido-group-wrapper-label']}
+            className={`${styles['raido-group-wrapper-label']}`}
             key={index}
             onClick={(e) => changeOptions(item.props, index, e)}
             style={item.props.disabled && { cursor: 'not-allowed' }}
@@ -46,11 +57,15 @@ const RadioGroup: FC<RadioGroupProps> = (props) => {
             <input
               style={item.props.disabled && { cursor: 'not-allowed' }}
               type="radio"
-              className="nes-radio"
+              className={`nes-radio ${item.props.dark && 'is-dark'}`}
               checked={selectIndex === index}
               onChange={handleChange}
             />
-            <span style={item.props.disabled && { cursor: 'not-allowed', color: 'gray' }}>
+            <span
+              style={
+                item.props.disabled && { cursor: 'not-allowed', color: 'gray' }
+              }
+            >
               {item?.props?.children}
             </span>
           </label>
