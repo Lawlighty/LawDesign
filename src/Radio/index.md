@@ -90,18 +90,27 @@ const LNRadioComp = () => {
   };
 
   return (
-    <div
-      className="radio-wrapper"
-      style={{ background: '#212529', padding: '1rem 0' }}
-    >
-      <RadioGroup value={1} onChange={onChange}>
-        <Radio disabled dark>
-          Apple
-        </Radio>
-        <Radio dark>Orange</Radio>
-        <Radio dark>Watch</Radio>
-      </RadioGroup>
-    </div>
+    <>
+      <div className="radio-wrapper" style={{ padding: '1rem 0' }}>
+        <RadioGroup value={1} onChange={onChange}>
+          <Radio disabled>Apple</Radio>
+          <Radio>Orange</Radio>
+          <Radio>Watch</Radio>
+        </RadioGroup>
+      </div>
+      <div
+        className="radio-wrapper"
+        style={{ background: '#212529', padding: '1rem 0' }}
+      >
+        <RadioGroup value={1} onChange={onChange}>
+          <Radio disabled dark>
+            Apple
+          </Radio>
+          <Radio dark>Orange</Radio>
+          <Radio dark>Watch</Radio>
+        </RadioGroup>
+      </div>
+    </>
   );
 };
 export default LNRadioComp;
