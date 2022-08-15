@@ -1,0 +1,7 @@
+.checkbox-group-wrapper .checkbox-group-wrapper-label {
+  margin-right: 16px;
+}
+.vertical-wrapper {
+  display: flex;
+  flex-direction: column;
+}
