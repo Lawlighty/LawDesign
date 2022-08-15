@@ -1,10 +1,17 @@
-import React, { useRef, useState } from 'react'
-import styles from './index.less'
-import Draggable from 'react-draggable'
-import 'nes.css/css/nes.min.css'
+/*
+ * @Date: 2022-08-15 08:44:40
+ * @LastEditors: lyx
+ * @LastEditTime: 2022-08-15 15:39:05
+ * @FilePath: \lawDesgin\src\Modal\content.tsx
+ * @Description:
+ */
+import React, { useRef, useState } from 'react';
+import styles from './index.less';
+import Draggable from 'react-draggable';
+import 'nes.css/css/nes.min.css';
 
 const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
-  const draggleRef = useRef<any>(null)
+  const draggleRef = useRef<any>(null);
 
   // 边界设置
   const [bounds, setBounds] = useState({
@@ -12,37 +19,38 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
     top: 0,
     bottom: 0,
     right: 0,
-  })
+  });
 
   const onStart = (event: React.ReactDOM, uiData: any) => {
-    console.log('uiData', uiData)
-    const { clientWidth, clientHeight } = window?.document?.documentElement
+    console.log('uiData', uiData);
+    const { clientWidth, clientHeight } = window?.document?.documentElement;
     // @ts-ignore
-    const targetRect = draggleRef?.current?.getBoundingClientRect()
+    const targetRect = draggleRef?.current?.getBoundingClientRect();
     setBounds({
       left: -targetRect?.left + uiData?.x,
       right: clientWidth - (targetRect?.right - uiData?.x),
       top: -targetRect?.top + uiData?.y,
       bottom: clientHeight - (targetRect?.bottom - uiData?.y),
-    })
-  }
-
-  React.useEffect(() => {
-    // 监听事件
-    document.addEventListener('keydown', keydownHandler)
-    // 取消监听
-    return () => document.removeEventListener('keydown', keydownHandler)
-  })
+    });
+  };
 
   function keydownHandler({ key }) {
     // esc 键，关闭模态框
     switch (key) {
       case 'Escape':
-        onClose()
-        break
+        onClose();
+        break;
       default:
     }
   }
+
+  React.useEffect(() => {
+    // 监听事件
+    document.addEventListener('keydown', keydownHandler);
+    // 取消监听
+    return () => document.removeEventListener('keydown', keydownHandler);
+  });
+
   // 控制模态框显示
   return !isVisible ? null : (
     <div className={styles['modal']} onClick={onClose}>
@@ -77,7 +85,7 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
         </div>
       </Draggable>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

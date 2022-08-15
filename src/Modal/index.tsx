@@ -5,18 +5,18 @@
  * @FilePath: \lawDesgin\src\Modal\index.tsx
  * @Description:
  */
-import React, { useRef, useState } from 'react'
-import { Button } from 'antd'
-import Modal from './content'
-import Draggable from 'react-draggable'
+import React, { useRef, useState } from 'react';
+import { Button } from 'antd';
+import Modal from './content';
+import Draggable from 'react-draggable';
 // import 'antd/dist/antd.css';
-import 'nes.css/css/nes.min.css'
-import './index.css'
+import 'nes.css/css/nes.min.css';
+import './index.css';
 const App = () => {
-  const [visible, setVisible] = useState(false)
-  const modalRef = useRef<any>(null)
-  const draggleRef = useRef<any>(null)
-  const [disabled, setDisabled] = useState(true)
+  const [visible, setVisible] = useState(false);
+  const modalRef = useRef<any>(null);
+  const draggleRef = useRef<any>(null);
+  const [disabled, setDisabled] = useState(true);
 
   // 边界设置
   const [bounds, setBounds] = useState({
@@ -24,35 +24,35 @@ const App = () => {
     top: 0,
     bottom: 0,
     right: 0,
-  })
+  });
 
   const onStart = (event: React.ReactDOM, uiData: any) => {
-    console.log('uiData', uiData)
-    const { clientWidth, clientHeight } = window?.document?.documentElement
+    console.log('uiData', uiData);
+    const { clientWidth, clientHeight } = window?.document?.documentElement;
     // @ts-ignore
-    const targetRect = draggleRef?.current?.getBoundingClientRect()
+    const targetRect = draggleRef?.current?.getBoundingClientRect();
     setBounds({
       left: -targetRect?.left + uiData?.x,
       right: clientWidth - (targetRect?.right - uiData?.x),
       top: -targetRect?.top + uiData?.y,
       bottom: clientHeight - (targetRect?.bottom - uiData?.y),
-    })
-  }
+    });
+  };
 
   const showModal = () => {
-    setVisible(true)
-    document?.getElementById('dialog-default')?.showModal?.()
-  }
+    setVisible(true);
+    document?.getElementById('dialog-default')?.showModal?.();
+  };
 
   const handleOk = (e) => {
-    console.log(e)
-    setVisible(false)
-  }
+    console.log(e);
+    setVisible(false);
+  };
 
   const handleCancel = (e) => {
-    console.log(e)
-    setVisible(false)
-  }
+    console.log(e);
+    setVisible(false);
+  };
 
   return (
     <div>
@@ -76,10 +76,10 @@ const App = () => {
         onClose={() => setVisible(false)}
       /> */}
     </div>
-  )
-}
+  );
+};
 
-export default () => <App />
+export default () => <App />;
 
 // import Draggable from 'react-draggable';
 // import { Modal } from 'antd';

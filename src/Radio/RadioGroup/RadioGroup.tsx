@@ -1,5 +1,5 @@
-import React, { FC, useState, useEffect, memo, useCallback } from 'react'
-import styles from './index.less'
+import React, { FC, useState, useEffect, memo, useCallback } from 'react';
+import styles from './index.less';
 
 interface RadioGroupProps {
   children: Array<Object>
@@ -17,21 +17,21 @@ interface RadioProps {
 }
 
 const RadioGroup: FC<RadioGroupProps> = (props) => {
-  const { children, value, vertical = false, onChange } = props
+  const { children, value, vertical = false, onChange } = props;
 
-  const [selectIndex, setSelectIndex] = useState(value || 0) //选中索引
-  const [renderOptions, setRenderOptions] = useState(children)
+  const [selectIndex, setSelectIndex] = useState(value || 0); // 选中索引
+  const [renderOptions, setRenderOptions] = useState(children);
 
   const changeOptions = (item: RadioProps, i: number, e: any) => {
-    if (item.disabled) return
-    e && e.stopPropagation()
-    setSelectIndex(i)
-    onChange && onChange(item, i)
-  }
+    if (item.disabled) return;
+    e && e.stopPropagation();
+    setSelectIndex(i);
+    onChange && onChange(item, i);
+  };
 
   const handleChange = (event: any) => {
-    console.log('handleClick event', event.target.value)
-  }
+    console.log('handleClick event', event.target.value);
+  };
 
   return (
     <div className={`${styles['raido-group-wrapper']} ${vertical && styles['vertical-wrapper']}`}>
@@ -54,10 +54,10 @@ const RadioGroup: FC<RadioGroupProps> = (props) => {
               {item?.props?.children}
             </span>
           </label>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default memo(RadioGroup)
+export default memo(RadioGroup);

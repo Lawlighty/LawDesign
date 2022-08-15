@@ -1,8 +1,6 @@
-import type React from 'react'
+import type React from 'react';
 
-interface onClick {
-  (): void
-}
+type onClick = () => void
 export interface ButtonProps {
   type?: 'primary' | 'success' | 'warning' | 'error' | 'disabled'
   children: React.ReactNode

@@ -1,9 +1,9 @@
-import React from 'react'
-import IconProps from './type.ts'
+import React from 'react';
+import IconProps from './type.ts';
 
-const ICON_LIST = ['mario', 'ash', 'pokeball', 'bulbasaur', 'charmander', 'squirtle', 'kirby']
+const ICON_LIST = ['mario', 'ash', 'pokeball', 'bulbasaur', 'charmander', 'squirtle', 'kirby'];
 export default (props: IconProps) => {
-  const { icon, size = '', transparent = false, half = false, empty = false } = props
+  const { icon, size = '', transparent = false, half = false, empty = false } = props;
 
   return (
     <i
@@ -11,5 +11,5 @@ export default (props: IconProps) => {
         size && `is-${size}`
       }  ${transparent && 'is-transparent'} ${half && 'is-half'} ${empty && 'is-empty'}`}
     ></i>
-  )
-}
+  );
+};
