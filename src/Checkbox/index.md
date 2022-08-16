@@ -20,22 +20,58 @@ group:
 
 ```tsx
 /**
- * title: 按钮组 基本使用
- *
+ * title: 基本用法
+ * desc: 简单的 checkbox。
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Checkbox, CheckboxGroup } from 'lawDesgin';
 import './index.less';
 
 const LNCheckboxComp = () => {
-  const onChange = (a: string, b: number) => {
-    console.log(a, b);
+  const [checked, setChecked] = useState(false);
+  const onChange = (e: Event) => {
+    console.log('Checkbox e', e.target.checked);
+    setChecked(e.target.checked);
+  };
+  return (
+    <div className="checkbox-wrapper">
+      <Checkbox checked={checked} onChange={onChange}>
+        Checkbox
+      </Checkbox>
+
+      <div className="checkbox-wrapper-dark">
+        <Checkbox dark disabled>
+          Checkbox
+        </Checkbox>
+      </div>
+    </div>
+  );
+};
+export default LNCheckboxComp;
+```
+
+```tsx
+/**
+ * title: 按钮组 基本使用
+ *
+ */
+
+import React, { useState } from 'react';
+import { Checkbox, CheckboxGroup } from 'lawDesgin';
+import './index.less';
+
+const LNCheckboxComp = () => {
+  const [value, setValue] = useState([1]);
+
+  const onChange = (checkedValues: Array<number>) => {
+    console.log('checkedValues', checkedValues);
+    setValue([...checkedValues]);
   };
 
   return (
-    <div className="radio-wrapper">
-      <CheckboxGroup value={1} onChange={onChange}>
+    <div className="checkbox-wrapper">
+      <CheckboxGroup value={value} onChange={onChange}>
         <Checkbox disabled>Apple</Checkbox>
         <Checkbox>Orange</Checkbox>
         <Checkbox>Watch</Checkbox>
@@ -62,7 +98,7 @@ const LNCheckboxComp = () => {
   };
 
   return (
-    <div className="radio-wrapper">
+    <div className="checkbox-wrapper">
       <CheckboxGroup value={1} onChange={onChange} vertical>
         <Checkbox disabled>Apple</Checkbox>
         <Checkbox>Orange</Checkbox>
@@ -91,7 +127,7 @@ const LNCheckboxComp = () => {
 
   return (
     <>
-      <div className="radio-wrapper" style={{ padding: '1rem 0' }}>
+      <div className="checkbox-wrapper" style={{ padding: '1rem 0' }}>
         <CheckboxGroup value={1} onChange={onChange}>
           <Checkbox disabled>Apple</Checkbox>
           <Checkbox>Orange</Checkbox>
@@ -99,7 +135,7 @@ const LNCheckboxComp = () => {
         </CheckboxGroup>
       </div>
       <div
-        className="radio-wrapper"
+        className="checkbox-wrapper"
         style={{ background: '#212529', padding: '1rem 0' }}
       >
         <CheckboxGroup value={1} onChange={onChange}>
