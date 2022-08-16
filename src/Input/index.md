@@ -15,31 +15,61 @@ group:
 
 ## 何时使用
 
-* 需要用户输入表单域内容时。
-* 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
-
+- 需要用户输入表单域内容时。
+- 提供组合型输入框，带搜索的输入框，还可以进行大小选择。
 
 ```tsx
 /**
  * title: 基本使用
  * desc: 基本使用
  */
-import React,{useState} from 'react'
-import { Input } from 'lawDesgin'
-import './index.less'
+import React, { useState } from 'react';
+import { Input } from 'lawDesgin';
+import './index.less';
 
 const LNInputComp = () => {
-  const [value, setValue] = useState('LawDesign')
+  const [value, setValue] = useState('LawDesign');
   return (
     <div className="input-wrapper">
-      <Input value={value} onChange={(e)=>{setValue(e.target.value)}}/>
-      <Input type="success" placeholder={'success'}/>
-      <Input type="warning" value={'warning'}/>
-      <Input type="error" value={'error'} width={150}/>
+      <Input
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+      <Input type="success" placeholder={'success'} />
+      <Input type="warning" value={'warning'} />
+      <Input type="error" value={'error'} width={150} />
     </div>
-  )
-}
-export default LNInputComp
+  );
+};
+export default LNInputComp;
+```
+
+```tsx
+/**
+ * title: 黑暗模式
+ * desc: 黑暗模式
+ */
+import React, { useState } from 'react';
+import { Input } from 'lawDesgin';
+import './index.less';
+
+const LNInputComp = () => {
+  const [value, setValue] = useState('LawDesign');
+  return (
+    <div className="input-wrapper">
+      <Input
+        dark
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+    </div>
+  );
+};
+export default LNInputComp;
 ```
 
 ```tsx
@@ -47,30 +77,67 @@ export default LNInputComp
  * title: 密码框
  * desc: 密码框
  */
-import React,{useState} from 'react'
-import { Input } from 'lawDesgin'
-import './index.less'
+import React, { useState } from 'react';
+import { Input } from 'lawDesgin';
+import './index.less';
 
 const LNInputComp = () => {
-  const [value, setValue] = useState('123456')
+  const [value, setValue] = useState('123456');
   return (
     <div className="input-wrapper">
-      <Input value={value} password onChange={(e)=>{setValue(e.target.value)}}/>
+      <Input
+        value={value}
+        password
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
     </div>
-  )
-}
-export default LNInputComp
+  );
+};
+export default LNInputComp;
+```
+
+```tsx
+/**
+ * title: Textarea
+ * desc: Textarea
+ */
+import React, { useState } from 'react';
+import { Input } from 'lawDesgin';
+import './index.less';
+
+const LNInputComp = () => {
+  const [value, setValue] = useState('LawDesign');
+  return (
+    <div className="input-wrapper">
+      <Input
+        textarea
+        type="success"
+        dark
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+    </div>
+  );
+};
+export default LNInputComp;
 ```
 
 ## API
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| type | 输入框类型 |  `success` \| `warning` \| `error` |  |  |
-| value | 输入框内容 | `string` |  |  |
-| placeholder | 提示内容 | `string` |  |  |
-| password | 密码框 | `boolean` | `false` |  |
-| width | 宽度 | `number` |  |  |
-| onChange | 输入框内容变化时的回调 | `function(e)` |  |  |
+| 属性        | 说明                   | 类型                              | 默认值  | 版本 |
+| ----------- | ---------------------- | --------------------------------- | ------- | ---- |
+| type        | 输入框类型             | `success` \| `warning` \| `error` |         |      |
+| value       | 输入框内容             | `string`                          |         |      |
+| placeholder | 提示内容               | `string`                          |         |      |
+| password    | 密码框                 | `boolean`                         | `false` |      |
+| dark        | 黑暗                   | `boolean`                         | `false` |      |
+| textarea    | textarea               | `boolean`                         | `false` |      |
+| rows        | rows                   | `number`                          | `4`     |      |
+| width       | 宽度                   | `number`                          |         |      |
+| onChange    | 输入框内容变化时的回调 | `function(e)`                     |         |      |
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
