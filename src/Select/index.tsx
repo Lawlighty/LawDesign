@@ -10,6 +10,9 @@ import React from 'react';
 interface option {
   label: string;
   value: string | number;
+  disabled?: boolean;
+  hidden?: boolean;
+  selected?: boolean;
 }
 
 interface SelectProps {
@@ -30,7 +33,23 @@ export default (props: SelectProps) => {
       style={width ? { width: `${width}px` } : {}}
     >
       <select onChange={handleChange}>
-        {options?.length ? <></> : <>{children}</>}
+        {options?.length ? (
+          <>
+            {options.map((item: option) => (
+              <option
+                key={item.value}
+                value={item.value}
+                disabled={item.disabled}
+                hidden={item.hidden}
+                selected={item.selected}
+              >
+                {item.label}
+              </option>
+            ))}
+          </>
+        ) : (
+          <>{children}</>
+        )}
       </select>
     </div>
   );

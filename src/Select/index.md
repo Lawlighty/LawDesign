@@ -28,14 +28,13 @@ import { Select } from 'lawDesgin';
 import './index.less';
 
 const LNSelectComp = () => {
-  const [value, setValue] = useState('LawDesign');
   const onChange = (value) => {
     console.log('select value', value);
   };
   return (
     <div className="select-wrapper">
       <Select onChange={onChange}>
-        <option value={1}>Select...</option>
+        <option value={1} disabled>Select...</option>
         <option value={2}>To be</option>
         <option value={3}>Not to be</option>
       </Select>
@@ -63,6 +62,36 @@ const LNSelectComp = () => {
         <option value={2}>To be</option>
         <option value={3}>Not to be</option>
       </Select>
+    </div>
+  );
+};
+export default LNSelectComp;
+```
+
+```tsx
+/**
+ * title: 数据化配置选项内容
+ * desc: options构造下拉选项
+ */
+import React, { useState } from 'react';
+import { Select } from 'lawDesgin';
+import './index.less';
+
+const LNSelectComp = () => {
+  const options = [
+    {label:'小米',value:1},
+    {label:'iphone',value:2},
+    {label:'华为',value:3, selected:true},
+    {label:'张三',value:4, disabled:true},
+    {label:'李四',value:3, hidden:true},
+  ]
+  const onChange = (value) => {
+    console.log('select value', value);
+  };
+  return (
+    <div className="select-wrapper">
+      <Select onChange={onChange} options={options} />
+
     </div>
   );
 };
