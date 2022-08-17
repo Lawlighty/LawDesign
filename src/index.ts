@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-08-10 15:47:19
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-16 18:44:20
+ * @LastEditTime: 2022-08-17 14:43:50
  * @FilePath: \lawDesgin\src\index.ts
  * @Description:
  */
@@ -16,6 +16,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as CheckboxGroup } from './Checkbox/CheckboxGroup/CheckboxGroup';
 export { default as Input } from './Input';
 export { default as Select } from './Select';
+export { default as Container } from './Container';
 export { default as Foo } from './Foo';
 export { default as Dialog } from './Dialog';
 export { default as Modal } from './Modal';
