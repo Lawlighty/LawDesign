@@ -1,52 +1,56 @@
 /*
  * @Date: 2022-08-17 15:33:11
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-17 18:40:40
+ * @LastEditTime: 2022-08-17 19:29:13
  * @FilePath: \lawDesgin\src\Table\index.tsx
  * @Description:
  */
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 interface ColumnsType {
   key: string;
   title: string;
   align?: 'left' | 'right' | 'center';
   className?: string;
+  width?: number;
   render?: Function;
 }
 
 interface TableProps {
-  columns?: any[];
-  type?: 'disc' | 'circle';
+  rowKey?: string;
+  columns: ColumnsType[];
+  dataSource: object[];
 }
 
 export default (props: any) => {
-  // const {} = props;
+  const { rowKey = 'id', columns = [], dataSource = [] } = props;
+  const [columnsList, setColumnsList] = useState<string[]>([]);
+  useEffect(() => {
+    let columnsList = columns.map((item: ColumnsType) => item.key);
+    setColumnsList([...columnsList]);
+    return () => {};
+  }, [columns]);
   return (
     <>
       <div className="nes-table-responsive">
         <table className="nes-table is-bordered is-centered">
           <thead>
             <tr>
-              <th>Table.is-bordered</th>
-              <th>Table.is-centered</th>
-              <th>Table.is-centered</th>
-              <th>Table.is-centered</th>
+              {columns.map((item: ColumnsType) => (
+                <th key={item.key}>{item.title}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Thou hast had a good morning</td>
-              <td>Thou hast had a good afternoon</td>
-              <td>Thou hast had a good evening</td>
-              <td>Thou hast had a good night</td>
-            </tr>
-            <tr>
-              <td>Thou hast had a good morning</td>
-              <td>Thou hast had a good afternoon</td>
-              <td>Thou hast had a good evening</td>
-              <td>Thou hast had a good night</td>
-            </tr>
+            {dataSource.map((item: any) => {
+              return (
+                <tr key={item[rowKey]}>
+                  {columnsList.map((cItem) => {
+                    return <td key={cItem}>{item?.[cItem] ?? ''}</td>;
+                  })}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
