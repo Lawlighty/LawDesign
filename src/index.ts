@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-08-10 15:47:19
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-17 15:19:55
+ * @LastEditTime: 2022-08-17 18:37:45
  * @FilePath: \lawDesgin\src\index.ts
  * @Description:
  */
@@ -18,6 +18,7 @@ export { default as Input } from './Input';
 export { default as Select } from './Select';
 export { default as Container } from './Container';
 export { default as List } from './List';
+export { default as Table } from './Table';
 export { default as Foo } from './Foo';
 export { default as Dialog } from './Dialog';
 export { default as Modal } from './Modal';
