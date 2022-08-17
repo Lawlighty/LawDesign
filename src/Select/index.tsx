@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-08-16 18:41:33
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-16 19:22:48
+ * @LastEditTime: 2022-08-17 08:49:02
  * @FilePath: \lawDesgin\src\Select\index.tsx
  * @Description:
  */
@@ -17,13 +17,14 @@ interface option {
 
 interface SelectProps {
   type?: 'success' | 'warning' | 'error' | 'dark';
+  value?: string | number;
   width?: number;
   options?: Array<option>;
   children?: any;
   onChange?: Function;
 }
 export default (props: SelectProps) => {
-  const { type, width, options, children, onChange } = props;
+  const { type, value, width, options, children, onChange } = props;
   const handleChange = (e) => {
     onChange && onChange(e.target.value);
   };
@@ -32,7 +33,7 @@ export default (props: SelectProps) => {
       className={`nes-select ${type && `is-${type}`}`}
       style={width ? { width: `${width}px` } : {}}
     >
-      <select onChange={handleChange}>
+      <select onChange={handleChange} value={value}>
         {options?.length ? (
           <>
             {options.map((item: option) => (

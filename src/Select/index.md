@@ -33,8 +33,10 @@ const LNSelectComp = () => {
   };
   return (
     <div className="select-wrapper">
-      <Select onChange={onChange}>
-        <option value={1} disabled>Select...</option>
+      <Select onChange={onChange} value={3}>
+        <option value={1} disabled>
+          Select...
+        </option>
         <option value={2}>To be</option>
         <option value={3}>Not to be</option>
       </Select>
@@ -79,19 +81,18 @@ import './index.less';
 
 const LNSelectComp = () => {
   const options = [
-    {label:'小米',value:1},
-    {label:'iphone',value:2},
-    {label:'华为',value:3, selected:true},
-    {label:'张三',value:4, disabled:true},
-    {label:'李四',value:3, hidden:true},
-  ]
+    { label: '小米', value: 1 },
+    { label: 'iphone', value: 2 },
+    { label: '华为', value: 3 },
+    { label: '张三', value: 4, disabled: true },
+    { label: '李四', value: 5, hidden: true },
+  ];
   const onChange = (value) => {
     console.log('select value', value);
   };
   return (
     <div className="select-wrapper">
-      <Select onChange={onChange} options={options} />
-
+      <Select value={3} onChange={onChange} options={options} />
     </div>
   );
 };
@@ -120,6 +121,5 @@ export default LNSelectComp;
 | -------- | ---------- | ------------------------------------------ | ------ | ---- |
 | hidden   | 下拉框类型 | `success` \| `warning` \| `error` \|`dark` |        |      |
 | disabled | 下拉框宽度 | `number`                                   |        |      |
-| selected | 提示内容   | `string`                                   |        |      |
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
