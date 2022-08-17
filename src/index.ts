@@ -19,6 +19,8 @@ export { default as Select } from './Select';
 export { default as Container } from './Container';
 export { default as List } from './List';
 export { default as Table } from './Table';
+export { default as Progress } from './Progress';
+export { default as Avatar } from './Avatar';
 export { default as Foo } from './Foo';
 export { default as Dialog } from './Dialog';
 export { default as Modal } from './Modal';

@@ -20,10 +20,20 @@ interface TableProps {
   rowKey?: string;
   columns: ColumnsType[];
   dataSource: object[];
+  border?: boolean;
+  center?: boolean;
+  dark?: boolean;
 }
 
-export default (props: any) => {
-  const { rowKey = 'id', columns = [], dataSource = [] } = props;
+export default (props: TableProps) => {
+  const {
+    rowKey = 'id',
+    border,
+    center,
+    dark,
+    columns = [],
+    dataSource = [],
+  } = props;
   const [columnsList, setColumnsList] = useState<string[]>([]);
   useEffect(() => {
     let columnsList = columns.map((item: ColumnsType) => item.key);
@@ -33,11 +43,20 @@ export default (props: any) => {
   return (
     <>
       <div className="nes-table-responsive">
-        <table className="nes-table is-bordered is-centered">
+        <table
+          className={`nes-table ${border && `is-bordered`} ${
+            center && `is-centered`
+          } ${dark && `is-dark`}`}
+        >
           <thead>
             <tr>
               {columns.map((item: ColumnsType) => (
-                <th key={item.key}>{item.title}</th>
+                <th
+                  key={item.key}
+                  style={item.width ? { width: `${item.width}px` } : {}}
+                >
+                  {item.title}
+                </th>
               ))}
             </tr>
           </thead>

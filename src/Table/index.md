@@ -26,7 +26,6 @@ group:
  */
 import React, { useState } from 'react';
 import { Table } from 'lawDesgin';
-import './index.less';
 
 const LNTableComp = () => {
   const dataSource = [
@@ -59,11 +58,113 @@ const LNTableComp = () => {
       title: '住址',
       dataIndex: 'address',
       key: 'address',
+      width: 200
     },
   ];
   return (
-    <div className="list-wrapper">
+    <div>
       <Table rowKey="key" columns={columns} dataSource={dataSource} />
+    </div>
+  );
+};
+export default LNTableComp;
+```
+
+```tsx
+/**
+ * title: 样式
+ * desc: 边框/居中
+ */
+import React, { useState } from 'react';
+import { Table } from 'lawDesgin';
+
+const LNTableComp = () => {
+  const dataSource = [
+    {
+      key: '1',
+      name: '胡彦斌',
+      age: 32,
+      address: '西湖区湖底公园1号',
+    },
+    {
+      key: '2',
+      name: '胡彦祖',
+      age: 42,
+      address: '西湖区湖底公园1号',
+    },
+  ];
+
+  const columns = [
+    {
+      title: '姓名',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '年龄',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: '住址',
+      dataIndex: 'address',
+      key: 'address',
+      width: 200
+    },
+  ];
+  return (
+    <div>
+      <Table rowKey="key" border center  columns={columns} dataSource={dataSource} />
+    </div>
+  );
+};
+export default LNTableComp;
+```
+```tsx
+/**
+ * title: 黑暗
+ * desc: dark
+ */
+import React, { useState } from 'react';
+import { Table } from 'lawDesgin';
+
+const LNTableComp = () => {
+  const dataSource = [
+    {
+      key: '1',
+      name: '胡彦斌',
+      age: 32,
+      address: '西湖区湖底公园1号',
+    },
+    {
+      key: '2',
+      name: '胡彦祖',
+      age: 42,
+      address: '西湖区湖底公园1号',
+    },
+  ];
+
+  const columns = [
+    {
+      title: '姓名',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '年龄',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: '住址',
+      dataIndex: 'address',
+      key: 'address',
+      width: 200
+    },
+  ];
+  return (
+    <div>
+      <Table rowKey="key" border center dark  columns={columns} dataSource={dataSource} />
     </div>
   );
 };
@@ -76,5 +177,8 @@ export default LNTableComp;
 | ---------- | ------------ | ----------------- | ------ | ---- |
 | dataSource | 列表数据     | `any[]`           |        |      |
 | type       | 列表显示样式 | `disc` \|`circle` | `disc` |      |
+| border       | 边框 | `boolean`| `false` |      |
+| center       | 表头居中 | `boolean`| `false` |      |
+| dark       | 黑暗 | `boolean`| `false` |      |
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
