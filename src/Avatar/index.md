@@ -20,19 +20,18 @@ group:
  */
 import React, { useState } from 'react';
 import { Avatar } from 'lawDesgin';
-import './index.less'
+import './index.less';
 const LNAvatarComp = () => {
-  const src ='https://www.gravatar.com/avatar?s=15'
+  const src = 'https://joeschmoe.io/api/v1/random';
   return (
     <div className="avatar-wrapper">
-      <Avatar src={src} alt={'Gravatar image example'} size="small"/>
-      <Avatar src={src} alt={'Gravatar image example'} size="medium"/>
-      <Avatar src={src} alt={'Gravatar image example'} size="large"/>
+      <Avatar src={src} alt={'Gravatar image example'} size="small" />
+      <Avatar src={src} alt={'Gravatar image example'} size="medium" />
+      <Avatar src={src} alt={'Gravatar image example'} size="large" />
 
-      <Avatar src={src} alt={'Gravatar image example'} size="small" round/>
-      <Avatar src={src} alt={'Gravatar image example'} size="medium" round/>
-      <Avatar src={src} alt={'Gravatar image example'} size="large" round/>
-
+      <Avatar src={src} alt={'Gravatar image example'} size="small" round />
+      <Avatar src={src} alt={'Gravatar image example'} size="medium" round />
+      <Avatar src={src} alt={'Gravatar image example'} size="large" round />
     </div>
   );
 };
@@ -41,10 +40,9 @@ export default LNAvatarComp;
 
 ## API
 
-| 属性       | 说明         | 类型              | 默认值 | 版本 |
-| ---------- | ------------ | ----------------- | ------ | ---- |
-| size       | 尺寸 | `small` \|`medium` \| `large`  |`medium` |   |
-| src       | 图像地址 | `string`|  |      |
-| alt       | 图像无法显示时的替代文本 | `string`|  |      |
-| round       | 圆形 | `boolean` |`false`  |      |
-
+| 属性  | 说明                     | 类型                          | 默认值   | 版本 |
+| ----- | ------------------------ | ----------------------------- | -------- | ---- |
+| size  | 尺寸                     | `small` \|`medium` \| `large` | `medium` |      |
+| src   | 图像地址                 | `string`                      |          |      |
+| alt   | 图像无法显示时的替代文本 | `string`                      |          |      |
+| round | 圆形                     | `boolean`                     | `false`  |      |

@@ -1,11 +1,11 @@
 /*
  * @Date: 2022-08-17 15:33:11
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-17 19:29:13
+ * @LastEditTime: 2022-08-18 11:29:18
  * @FilePath: \lawDesgin\src\Table\index.tsx
  * @Description:
  */
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface ColumnsType {
   key: string;

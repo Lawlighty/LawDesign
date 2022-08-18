@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-08-10 15:47:19
  * @LastEditors: lyx
- * @LastEditTime: 2022-08-17 18:37:45
+ * @LastEditTime: 2022-08-18 09:38:02
  * @FilePath: \lawDesgin\src\index.ts
  * @Description:
  */
@@ -21,6 +21,7 @@ export { default as List } from './List';
 export { default as Table } from './Table';
 export { default as Progress } from './Progress';
 export { default as Avatar } from './Avatar';
+export { default as Badge } from './Badge';
 export { default as Foo } from './Foo';
 export { default as Dialog } from './Dialog';
 export { default as Modal } from './Modal';
