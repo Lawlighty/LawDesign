@@ -5,16 +5,16 @@ nav:
   path: /components
 group:
   title: 通用
-  path: /components/
+  path: /components/common
   order: 1
 ---
 
 # Icon
 
 ```tsx
-import React from 'react'
-import { Icon } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Icon } from 'lawDesgin';
+import './index.less';
 
 const LNICONComp = () => {
   const ICON_LIST = [
@@ -36,7 +36,7 @@ const LNICONComp = () => {
     'close',
     'trophy',
     'coin',
-  ]
+  ];
   return (
     <div className="icon-wrapper">
       {ICON_LIST.map((item) => (
@@ -48,9 +48,9 @@ const LNICONComp = () => {
         </div>
       ))}
     </div>
-  )
-}
-export default LNICONComp
+  );
+};
+export default LNICONComp;
 ```
 
 ```tsx
@@ -58,9 +58,9 @@ export default LNICONComp
  * title: 尺寸
  * desc: 可以通过设置 `size` 属性调整图标大小:`small`, `medium`, `large` 本质是通过`transform  scale(X)`进行缩放,默认为2倍图.
  */
-import React from 'react'
-import { Icon } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Icon } from 'lawDesgin';
+import './index.less';
 
 const LNICONComp = () => {
   return (
@@ -86,9 +86,9 @@ const LNICONComp = () => {
         <Icon icon="like" size="large"></Icon>
       </div>
     </div>
-  )
-}
-export default LNICONComp
+  );
+};
+export default LNICONComp;
 ```
 
 ```tsx
@@ -96,9 +96,9 @@ export default LNICONComp
  * title: 响应图标
  * desc: 部分图标 会有阶段效果
  */
-import React from 'react'
-import { Icon } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Icon } from 'lawDesgin';
+import './index.less';
 
 const LNICONComp = () => {
   return (
@@ -122,9 +122,9 @@ const LNICONComp = () => {
         <Icon icon="star" empty></Icon>
       </div>
     </div>
-  )
-}
-export default LNICONComp
+  );
+};
+export default LNICONComp;
 ```
 
 ```tsx
@@ -132,12 +132,20 @@ export default LNICONComp
  * title: 任天堂图标
  * desc: 任天堂拥有这些角色的版权。请遵守任天堂的指导方针和适用司法管辖区的法律
  */
-import React from 'react'
-import { Icon } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Icon } from 'lawDesgin';
+import './index.less';
 
 const LNICONComp = () => {
-  const ICON_LIST = ['mario', 'ash', 'pokeball', 'bulbasaur', 'charmander', 'squirtle', 'kirby']
+  const ICON_LIST = [
+    'mario',
+    'ash',
+    'pokeball',
+    'bulbasaur',
+    'charmander',
+    'squirtle',
+    'kirby',
+  ];
   return (
     <div className="icon-wrapper">
       {ICON_LIST.map((item) => (
@@ -149,9 +157,9 @@ const LNICONComp = () => {
         </div>
       ))}
     </div>
-  )
-}
-export default LNICONComp
+  );
+};
+export default LNICONComp;
 ```
 
 ## API

@@ -5,7 +5,7 @@ nav:
   path: /components
 group:
   title: 通用
-  path: /
+  path: /components/common
   order: 1
 ---
 
