@@ -4,10 +4,9 @@ nav:
   title: components
   path: /components
 group:
-  title: 示例
-  path: /components/demo
+  title: TODO
+  path: /components/todo
 ---
-
 ## Modal
 
 Demo:
