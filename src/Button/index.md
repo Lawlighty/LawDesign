@@ -5,7 +5,7 @@ nav:
   path: /components
 group:
   title: 通用
-  path: /components/
+  path: /
   order: 1
 ---
 
@@ -32,16 +32,16 @@ group:
 加载中(TODO)：用于异步操作等待反馈的时候，也可以避免多次提交
 
 ```tsx
-import React from 'react'
-import { Button } from 'lawDesgin'
-import './index.less'
+import React from 'react';
+import { Button } from 'lawDesgin';
+import './index.less';
 
 const LNButtonComp = () => {
   return (
     <div className="btn-wrapper">
       <Button
         onClick={() => {
-          alert('点击了')
+          alert('点击了');
         }}
       >
         default
@@ -52,16 +52,16 @@ const LNButtonComp = () => {
       <Button type="error">error</Button>
       <Button type="disabled">disabled</Button>
     </div>
-  )
-}
-export default LNButtonComp
+  );
+};
+export default LNButtonComp;
 ```
 
 ## API
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| type | 设置按钮类型 | `primary` \| `success` \| `warning` \| `error` \| `disabled` \| `default` | `default` |  |
-| onClick | 点击按钮时的回调 | `(event) => void` |  |  |
+| 属性    | 说明             | 类型                                                                      | 默认值    | 版本 |
+| ------- | ---------------- | ------------------------------------------------------------------------- | --------- | ---- |
+| type    | 设置按钮类型     | `primary` \| `success` \| `warning` \| `error` \| `disabled` \| `default` | `default` |      |
+| onClick | 点击按钮时的回调 | `(event) => void`                                                         |           |      |
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo

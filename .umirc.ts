@@ -1,3 +1,10 @@
+/*
+ * @Date: 2022-08-10 15:47:19
+ * @LastEditors: lyx
+ * @LastEditTime: 2022-08-18 19:30:32
+ * @FilePath: \lawDesgin\.umirc.ts
+ * @Description:
+ */
 import { defineConfig } from 'dumi';
 let BaseUrl = '';
 export default defineConfig({
@@ -11,4 +18,15 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   // more config: https://d.umijs.org/config
+  navs: [
+    // null,
+    {
+      title: 'components',
+      path: '/components',
+    },
+    {
+      title: 'GitHub',
+      path: '',
+    },
+  ],
 });
