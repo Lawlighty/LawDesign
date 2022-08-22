@@ -1,9 +1,0 @@
-.icon-wrapper .icon-item-wrapper {
-  display: inline-block;
-}
-.icon-wrapper .icon-item-wrapper .icon-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 16px;
-}
