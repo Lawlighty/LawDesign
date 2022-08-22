@@ -17,5 +17,6 @@ features:
     desc: Balabala
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
+[![npm](https://github.com/Lawlighty/LawDesign/actions/workflows/main.yml/badge.svg?branch=dev)](https://github.com/Lawlighty/LawDesign/actions/workflows/main.yml)
 
-## Hello lawDesgin!
+<!-- ## Hello lawDesgin! -->
