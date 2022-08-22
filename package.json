@@ -31,6 +31,9 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "engines": {
+    "node": "=10"
+  },
   "dependencies": {
     "antd": "^4.22.4",
     "nes.css": "^2.3.0",
