@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-      - uses: npm/action-setup@v2.1.2
-        with:
-          version: 7.2.1
+      - uses: actions/checkout@v3
       - name: Install modules
         run: npm install
       - name: Run Test
